@@ -13,3 +13,9 @@ const newNums = myNums
 .map( (num) => num+1 )
 .filter( (num) => num >= 40 )
 console.log(newNums)
+
+//! Print only truthy value
+// const myArray = [null, 1, 0, undefined, 'a']
+
+// const newNums = myArray.filter( (num) => num)
+// console.log(newNums);
