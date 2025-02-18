@@ -1,15 +1,3 @@
-# Projects related to DOM
-
-## Project Link 
-
-[Click here] (https://stackblitz.com/edit/dom-project-chaiaurcode-mcj2fpjn?file=1-colorChanger%2Fchaiaurcode.js,1-colorChanger%2Findex.html,1-colorChanger%2Fstyle.cssl)
-
-# Solution code
-
-## Project 1
-
-```JavaScript
-console.log("Deepali")
 const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
 buttons.forEach(function (button) {
@@ -39,6 +27,3 @@ buttons.forEach(function (button) {
     }
   });
 });
-
-
-```
