@@ -1,6 +1,6 @@
 # Projects related to DOM
 
-## Project Link 
+## Project Link
 
 [Click here] (https://stackblitz.com/edit/dom-project-chaiaurcode-mcj2fpjn?file=1-colorChanger%2Fchaiaurcode.js,1-colorChanger%2Findex.html,1-colorChanger%2Fstyle.cssl)
 
@@ -42,6 +42,7 @@ buttons.forEach(function (button) {
 
 
 ```
+
 ## Project 2 - BMI Calculator
 
 ```JavaScript
@@ -81,7 +82,7 @@ form.addEventListener('submit', function (e) {
 
 ## Project 3 - Digital Clock
 
-``` JavaScript 
+```JavaScript
 
 const clock = document.getElementById('clock');
 
@@ -101,7 +102,7 @@ setInterval(function () {
 
 ## Project 3 - Guess a Number
 
-``` JavaScript 
+```JavaScript
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -192,5 +193,65 @@ function newGame() {
     playGame = true;
   });
 }
+
+```
+
+## Project 5 - Keyboard
+
+```JavaScript
+
+const insert = document.getElementById('insert');
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class="color">
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+  </div>
+  `;
+});
+
+```
+
+## Project 6 - Unlimited Color
+
+```JavaScript
+// Generate the random color
+const randomColor = function () {
+    const hex = '0123456789ABCDLEF';
+    let color = '#';
+    for (let i = 0; i <= 5; i++) {
+      color += hex[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+  let intervalId;
+  const startChangingColor = function () {
+    if (!intervalId) {
+      intervalId = setInterval(changeBgColor, 1000);
+    }
+
+    function changeBgColor() {
+      document.body.style.backgroundColor = randomColor();
+    }
+  };
+
+  const stopChangingColor = function () {
+    clearInterval(intervalId);
+    intervalId = null;
+  };
+
+  document.querySelector('#start').addEventListener('click', startChangingColor);
+  document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 ```
