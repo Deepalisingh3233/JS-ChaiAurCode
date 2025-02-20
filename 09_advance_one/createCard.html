@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating the card using api</title>
+  </head>
+  <body></body>
+  <script>
+     const requestURL = "https://67b6dbc82bddacfb270c914a.mockapi.io/api";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestURL);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        const div = document.createElement("div");
+        console.log(div);
+        div.className = "main";
+        div.innerHTML = `
+        <div class="container">
+        <img src = ${data[1].url} alt = "Profile image">
+        <h1> ${data[1].username} </h1>
+        <h2> Followers : ${data[1].followers} </h2>
+        </div>
+    `;
+    document.body.append(div);
+       
+      }
+    };
+    
+    xhr.send();
+    
+  </script>
+</html>
